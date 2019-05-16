@@ -1,12 +1,12 @@
 pipeline {
      agent any
-stage {
+stages {
 stage(' ---clean--') {
 steps {
 sh "mvn clean"
 }
 }
-stage ('---test---') {
+stage ('--test--') {
 steps{
 sh "mvn test"
 }
