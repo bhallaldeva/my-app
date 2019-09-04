@@ -17,8 +17,11 @@ sh "mvn package"
 }
 }
      stage ('---deploy---'){
+          sshagent(['tomcat-dev']){
           steps{
                sh "scp -o StrictHostKeyChecking=no Target/*.war ec2-user@3.17.147.184:/opt/apache-tomcat-8.5.45/webapps/'
+          }
+          }   
           }
 }
 }
